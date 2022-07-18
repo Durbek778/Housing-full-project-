@@ -10,7 +10,7 @@ import {
 
 } from './style'
 import { Outlet, useNavigate } from 'react-router-dom'
-// import { Button } from '../Generic/'
+import { Button } from '../Generic/Button'
 
 export const Navbar = () => {
   const navigate = useNavigate()  
@@ -34,7 +34,7 @@ export const Navbar = () => {
                     })}
                 </NavbarBody>
 
-                <button width={'120px'}>Log Out</button>
+                <Button width={'120px'}>Log Out</Button>
             </NavbarWrapper>
          </Container>
          <Outlet/>
