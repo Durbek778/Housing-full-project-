@@ -9,7 +9,7 @@ const getType = (type) => {
             }
         case 'primary': 
             return {
-                backgroun: '#0061DF',
+                background: '#0061DF',
                 color: '#FFFFFF',
                 border: 'none',
             };
