@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Carousel } from "antd";
 import { ReactComponent as arrow } from "../../../assets/icons/left-arrow.svg";
 import { ReactComponent as rarrow } from "../../../assets/icons/right-arrow.svg";
 
@@ -10,6 +9,7 @@ width: 100%;
 
 const MainCarousel = styled('div')`
 height: fit-content;
+height: 576px;
 `
 
 const Img = styled.img`

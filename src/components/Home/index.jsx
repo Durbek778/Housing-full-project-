@@ -1,14 +1,14 @@
 import React from 'react'
 import Filter from '../Filter'
 import { Container } from './style'
-import { Carousel } from './Carousel'
+import Carousell, { Carousel } from './Carousel'
 
 
 const Home = () => {
   return (
     <Container>
         <Filter />
-        <Carousel />
+        <Carousell />
     </Container>
   )
 }

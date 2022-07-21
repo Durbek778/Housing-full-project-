@@ -1,25 +1,29 @@
 import React, {useRef} from 'react'
-import { CarouselWrapper , Icon, Img, MainCarousel } from './style'
+import { CarouselWrapper , Icon, Img,  } from './style'
 import img1 from '../../../assets/imgs/uy1.png'
-import img2 from '../../../assets/imgs/uy2.png'
 
-export const Carousel = () => {
-  const slider = useRef()
+import { Carousel } from 'antd'
+
+export const Carousell = () => {
+  const durbek = useRef()
 
   return (
     <CarouselWrapper>
-      <Icon.Left onCLick={() => slider.current?.next()} />
-      <Icon.Right onCLick={() => slider.current?.prev()} />
-      <MainCarousel ref={slider} dots autoplay>
-        <Img src={img1} alt='img' />
-        <Img src={img2} alt='img' />
-        <Img src={img1} alt='img' />
-        <Img src={img2} alt='img' />
-        <Img src={img1} alt='img' />
-        <Img src={img2} alt='img' />
-      </MainCarousel>
+      <Icon.Left onClick={() => durbek.current?.next()} />
+      <Icon.Right onClick={() => durbek.current?.prev()} />
+      <Carousel ref={durbek} dots autoplay>
+        <div>
+          <Img src={img1} alt='img' />,
+        </div> 
+        <div>
+          <Img src={img1} alt='img' />,
+        </div>
+        <div>
+          <Img src={img1} alt='img' />,
+        </div>
+      </Carousel>
     </CarouselWrapper>
   )
 }
 
-export default Carousel
+export default Carousell
