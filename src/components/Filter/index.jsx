@@ -50,7 +50,7 @@ const Filter = () => {
         </div>
       </Popover>
       <Button type={'primary'} width={'131px'}>
-        <Icon.Search/>
+        <Icon.Search/> 
         Search
       </Button>
     </Container>

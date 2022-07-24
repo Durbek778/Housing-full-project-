@@ -1,7 +1,10 @@
 import React from 'react'
 import Filter from '../Filter'
 import { Container } from './style'
-import Carousell, { Carousel } from './Carousel'
+import Carousell from './Carousel'
+import Recommended from '../Recommended'
+
+
 
 
 const Home = () => {
@@ -9,6 +12,7 @@ const Home = () => {
     <Container>
         <Filter />
         <Carousell />
+        <Recommended/>
     </Container>
   )
 }

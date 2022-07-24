@@ -1,21 +1,52 @@
 import styled from "styled-components";
+import { Carousel } from 'antd'
 import { ReactComponent as arrow } from "../../../assets/icons/left-arrow.svg";
 import { ReactComponent as rarrow } from "../../../assets/icons/right-arrow.svg";
+import carousel1 from '../../../assets/imgs/uy1.png'
 
 const CarouselWrapper = styled('div')`
 position: relative;
 width: 100%;
+z-index: 1;
 `
 
-const MainCarousel = styled('div')`
+const MainCarousel = styled(Carousel)`
 height: fit-content;
-height: 576px;
+min-height: 160px;
+
+`
+const Wrap = styled.div`
+`
+const Card = styled.div`
+background: white;
+opacity: 0.5;
+z-index: 3;
+color: black;
+border-radius: 10px;
+
 `
 
-const Img = styled.img`
-background: black;
+const Content = styled.div`
+color: white;
+font-size: 25px;
 width: 100%;
+height: 75vh;
+display: flex;
+justify-content: center;
+align-items: center;
+background: url(${carousel1});
+background-size: cover;
+position: relative;
+&::before{
+ content: "";
+ width: 100%;
+ height: 100%;
+ background: rgba(0, 0, 0, 0.65);
+ position: absolute;
+ z-index: 0;
+}
 `
+
 const Icon = styled.div``
 
 Icon.Left = styled(arrow)`
@@ -38,7 +69,7 @@ z-index: 999;
 cursor: pointer;
 :hover {
     opacity: 0.97;
-}
+ } 
 & path {
     fill: #0d263b;
 }
@@ -70,4 +101,4 @@ cursor: pointer;
 }
 `;
 
-export { CarouselWrapper, MainCarousel, Icon, Img}
+export { CarouselWrapper, MainCarousel, Icon, Wrap, Content, Card}

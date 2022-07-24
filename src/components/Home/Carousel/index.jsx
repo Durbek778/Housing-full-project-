@@ -1,27 +1,51 @@
 import React, {useRef} from 'react'
-import { CarouselWrapper , Icon, Img,  } from './style'
-import img1 from '../../../assets/imgs/uy1.png'
+import { CarouselWrapper , Icon, MainCarousel, Content, Wrap, Card } from './style'
+import carousel2 from '../../../assets/imgs/uy2.png'
 
-import { Carousel } from 'antd'
+
+
 
 export const Carousell = () => {
   const durbek = useRef()
 
   return (
     <CarouselWrapper>
-      <Icon.Left onClick={() => durbek.current?.next()} />
-      <Icon.Right onClick={() => durbek.current?.prev()} />
-      <Carousel ref={durbek} dots autoplay>
-        <div>
-          <Img src={img1} alt='img' />,
-        </div> 
-        <div>
-          <Img src={img1} alt='img' />,
-        </div>
-        <div>
-          <Img src={img1} alt='img' />,
-        </div>
-      </Carousel>
+      <Icon.Left onClick={() => durbek.current?.prev()} />
+      <Icon.Right onClick={() => durbek.current?.next()} />
+      <MainCarousel ref={durbek} dots autoplay>
+        <Wrap>
+          <Content >
+            <Card>
+              <h1> Sky Pool Aaprtment 1</h1>
+              <p> 112 Glenwood Ave Hyde Park, Boston, Ma</p>
+            </Card>
+          </Content >
+        </Wrap> 
+        <Wrap>
+        <Content >
+            <Card>
+              <h1> Sky Pool Aaprtment 2</h1>
+              <p> 112 Glenwood Ave Hyde Park, Boston, Ma</p>
+            </Card>
+          </Content>
+        </Wrap>
+        <Wrap>
+        <Content>
+            <Card>
+              <h1> Sky Pool Aaprtment 3</h1>
+              <p> 112 Glenwood Ave Hyde Park, Boston, Ma</p>
+            </Card>
+          </Content>
+        </Wrap>
+        <Wrap>
+        <Content>
+            <Card>
+              <h1> Sky Pool Aaprtment 4</h1>
+              <p> 112 Glenwood Ave Hyde Park, Boston, Ma</p>
+            </Card>
+          </Content>
+        </Wrap>
+      </MainCarousel>
     </CarouselWrapper>
   )
 }
