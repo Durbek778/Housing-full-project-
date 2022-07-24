@@ -5,16 +5,7 @@ import { Card } from '../Generic';
 
 const Recommended = () => {
 
-useQuery('', ()=> {
-  return fetch ('https://houzing-app.herokuapp.com/api/v1/houses/list').then((res)=>res.json())
-},{
-  onSuccess: (res)=>{
-    ///
-  },
-  onError:(err)=>{
-    console.log(err);
-  }
-})
+
 
   const items = [
     <Card/>,
@@ -39,7 +30,7 @@ useQuery('', ()=> {
               items: 1,
           },
           780: {
-            items: 2,
+            item: 2
           },
           1024: {
               items: 3

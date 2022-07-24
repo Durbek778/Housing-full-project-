@@ -6,8 +6,11 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-padding: 0 50px;
-/* width: {width}; */
+width: 90%;
+margin: auto;
+
 `
+
+
 
 export { Container };

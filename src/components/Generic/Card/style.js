@@ -1,103 +1,174 @@
 import styled from "styled-components";
-import { ReactComponent as bed } from "../../../assets/icons/bed.svg";
-import { ReactComponent as baths } from "../../../assets/icons/bath.svg";
-import { ReactComponent as garage } from "../../../assets/icons/garage.svg";
-import { ReactComponent as square } from "../../../assets/icons/square.svg";
-import { ReactComponent as resize } from "../../../assets/icons/resize.svg";
-import { ReactComponent as love } from "../../../assets/icons/love.svg";
-import uy3 from '../../../assets/imgs/uy3.png'
+import { ReactComponent as bed } from '../../../assets/icons/bed.svg'
+import { ReactComponent as beth } from '../../../assets/icons/beth.svg'
+import { ReactComponent as garage } from '../../../assets/icons/garage.svg'
+import { ReactComponent as ruler } from '../../../assets/icons/square.svg'
+import { ReactComponent as heard } from '../../../assets/icons/love.svg'
+import { ReactComponent as resize } from '../../../assets/icons/resize.svg'
 
-const Card_item = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-between;
-min-height: 250px;
-width: 380px;
-background: #ffffff;
-border-radius: 3px #E6E9EC;
-:hover{
+const Container = styled.div`
+ display: flex;
+ overflow: hidden;
+ flex-direction: column;
+ width: 100%;
+ width: 380px;
+ min-width: 250px;
+ max-width: 380px;
+ height: 450px;
+ background: #ffffff;
+ margin: ${({margin}) => margin && '0 1 1em ' };
+ margin-bottom: 10px;
+ border: 1px solid #e6e9ec;
+ border-radius: 3px;
+ :hover {
     filter: 
-    drop-shadow(0px, 20px, 38px,rgba(0,0,0,0.06)),
-    drop-shadow(0px, 7px, 46px,rgba(0,0,0,0.06)),
-    drop-shadow(0px, 8px, 15px,rgba(0,0,0,0.06));
-}
-`;
+      drop-shadow(0px 20px 38px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 7px 46px rgba(0, 0, 0, 0.06))
+      drop-shadow(0px 8px 15px rgba(0, 0, 0, 0.06));
+  }
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+`
 
-const Img = styled.div`
+const Image = styled.img`
 min-height: 220px;
 max-height: 220px;
 width: 100%;
-background: url(${uy3});
 `
-
 const InfoWrapper = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
 padding: 25px;
-border: 1px whitesmoke solid;
+border-top: 1px solid #e6e9ec;
+/* background: red; */
 `
 
 
-const IconWrapperMiddle = styled.div`
+const User = styled.div`
+position: absolute;
 display: flex;
-justify-content: space-evenly;
-/* align-items: center; */
-gap: 30px;
+justify-content: center;
+align-items: center;
+width: 46px;
+height: 46px;
+right: 20px;
+top: -23px;
+border-radius: 50%;
+background: #ffffff;
+ box-shadow: 0px 0px 10px rgba(13, 38, 59, 0.2);
+;
 `
-const IconAndDes = styled.div`
+User.Img = styled.img`
+width:40px;
+height: 40px;
+border-radius: 50%;
+`
+
+
+const Info = styled.div`
+` 
+Info.Title = styled.div`
 display: flex;
+font-family: 'Fira Code', monospace;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 24px;
+color: #0D263B;
+margin-bottom: 4px;
+white-space: nowrap;
+overflow: hidden;
+`
+Info.Text = styled.div`
+display: flex;
+white-space: nowrap;
+overflow: hidden;
+font-family: 'Fira Code', monospace;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color:#696969 ;
+`
+Info.Detailes = styled.div`
+display:flex ;
+justify-content: space-between;
+align-items: center;
+padding-top: 15px;
+/* background: blue; ///////// color */
+`
+
+const Icons = styled.div``
+
+Icons.Wrapper = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
 flex-direction: column;
-align-items:center ;
+width: fit-content;
+height: 45px;
 `
+Icons.Bed = styled(bed)``;
 
-const Icon = styled.div``
+Icons.Beth = styled(beth)``;
 
-Icon.Bed = styled(bed)`
-width: 20px;
-height: 20px;
-`
-Icon.Baths = styled(baths)`
-width: 20px;
-height: 20px;
-`
-Icon.Garage = styled(garage)`
-width: 20px;
-height: 20px;
-`
-Icon.Square = styled(square)`
-width: 20px;
-height: 20px;
-`
-Icon.Resize = styled(resize)`
-width: 20px;
-height: 20px;
-`
-Icon.Love = styled(love)`
-width: 35px;
-height: 35px;
-`
+Icons.Garage = styled(garage)``;
+
+Icons.Ruler = styled(ruler)``;
+
+
 
 const Price = styled.div`
 display: flex;
-border: 1px whitesmoke solid;
-height: 60px;
-`
-const PricePerMonth = styled.div`
-display: flex;
+justify-content: space-between;
 align-items: center;
+height: 100%;
+border-top: 1px solid #e6e9ec;
+padding: 10px 25px;
+/* background: green; */
+`
+Price.Wrapper = styled(InfoWrapper)`
+border: none;
+padding: 0;
+display: flex;
 justify-content: center;
-margin-top: 20px;
-` 
-const BottomIcons = styled.div`
-display: flex;
-margin-left: auto;
+/* background: red; */
+`
+Price.Sale = styled(Info.Text)`
+line-height: 1;
+font-weight: 200;
+text-decoration: line-through;
+`
+Price.Origin = styled(Info.Title)`
+`
+Price.IconWrapper = styled(InfoWrapper)`
+border: none;
+flex-direction: row;
 align-items: center;
-justify-content: space-evenly;
-gap: 20px;
-margin-right: 20px;
+padding: 0;
+display: flex;
+/* background: blue; */
+`
+Icons.Resize = styled(resize)``
+
+Icons.Love = styled(heard)`
+margin-left: 20px;
+width: 35px;
+height: 35px;
+background: #f6f8f9;
+border-radius: 50px;
+cursor: pointer;
+:active {
+    transform: scale(0.97);
+}
 `
 
 
-export {Card_item, Img, InfoWrapper, Price, IconWrapperMiddle,
-     Icon, IconAndDes, PricePerMonth, BottomIcons}
+
+export { Container, Image, InfoWrapper,
+Price, User, Info, Icons };
