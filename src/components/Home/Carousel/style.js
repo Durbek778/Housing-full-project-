@@ -62,7 +62,7 @@ width: 45px;
 height: 45px;
 color: white;
 background: white;
-padding: 12px;
+/* padding: 12px; */
 opacity: 0.5;
 border-radius: 50%;
 z-index: 999;
@@ -88,7 +88,7 @@ width: 45px;
 height: 45px;
 color: white;
 background: white;
-padding: 12px;
+/* padding: 12px; */
 opacity: 0.5;
 border-radius: 50%;
 z-index: 999;
