@@ -7,7 +7,7 @@ import { useQuery } from "react-query";
 const Category = () => {
   const [data, setData] = useState();
   useQuery(
-    "",
+    "category",
     () => {
       return fetch("https://houzing-app.herokuapp.com/api/v1/categories").then(
         (res) => res.json()

@@ -1,11 +1,13 @@
-import React, { useEffect } from "react";
-import { Container } from "./style";
-import AliceCarousel from "react-alice-carousel";
-import { Card } from "../Generic";
-import { useQuery } from "react-query";
+import React from "react";
+import Filter from "../../components/Filter";
+import { Body, Container, ButtonWrapper } from "./style";
+import { Card } from "../../components/Generic/Card";
 import { useState } from "react";
+import { useQuery } from "react-query";
+import Button from "../../components/Generic/Button";
+import { type } from "@testing-library/user-event/dist/type";
 
-const Recommended = () => {
+const Properties = () => {
   const [data_Items, setData_items] = useState();
 
   useQuery(
@@ -22,7 +24,7 @@ const Recommended = () => {
         });
 
         setData_items(data);
-        // console.log(res);
+        console.log(res);
       },
       onError: (err) => {
         // console.log(err);
@@ -32,28 +34,19 @@ const Recommended = () => {
 
   return (
     <Container>
-      <h1 className="title">Recommended</h1>
+      <Filter />
+      <h1 className="title">Properties</h1>
       <p className="describtion">
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
-      <AliceCarousel
-        mouseTracking
-        items={data_Items}
-        arrows={false}
-        responsive={{
-          0: {
-            items: 1,
-          },
-          780: {
-            item: 2,
-          },
-          1024: {
-            items: 3,
-          },
-        }}
-      />
+      <Body>{data_Items}</Body>
+      <ButtonWrapper>
+        <Button type={"primary"} width={"250px"}>
+          Show more
+        </Button>
+      </ButtonWrapper>
     </Container>
   );
 };
 
-export default Recommended;
+export default Properties;
