@@ -5,9 +5,10 @@ import Carousell from "./Carousel";
 import Recommended from "../Recommended";
 import Category from "../Category";
 
-const Home = () => {
+export const Home = () => {
   return (
     <Container>
+      <p>home</p>
       <Filter />
       <Carousell />
       <Recommended />
@@ -16,4 +17,4 @@ const Home = () => {
   );
 };
 
-export { Home };
+export default Home;

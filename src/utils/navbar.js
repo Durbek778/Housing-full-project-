@@ -1,7 +1,7 @@
-import Generic from "../pages/Generic";
-import Home from "../pages/Home";
-import Properties from "../pages/properties";
-import Detailes from "../components/Detailes";
+import Generic from "../pages/Generic/index";
+import Home from "../components/Home";
+import Properties from "../components/properties";
+import DetailesPage from "../components/Detailes";
 
 export const navbar = [
   {
@@ -24,7 +24,7 @@ export const navbar = [
     id: "2-1",
     title: "Propertie",
     path: "/properties/:id",
-    element: <Detailes />,
+    element: <DetailesPage />,
     hidden: true,
     param: true,
   },

@@ -1,51 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
 
 body {
-    font-family: 'Fira Code', monospace;
-    background: #ffffff;
+  font-family: "Fira Code", monospace;
+  background: #ffffff;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primaryColor: #0d263b;
-    --secondaryColor: #696969;
-    --activeColor: #0061df;
-    /* width: {width}; */
-    --width: 1440px; 
-}
-.title{
-    font-family: 'Fira Code', monospace;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    letter-spacing: -0.02em;
-    color: #0d263b;
+  --primaryColor: #0d263b;
+  --secondaryColor: #696969;
+  --activeColor: #0061df;
+
+  --width: 1440px;
 }
 
-.subtitle{
-    font-family: 'Fira Code', monospace;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    color: #0d263b;
+.title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  /* line-height: 36px; */
+  /* text-align: center; */
+  letter-spacing: -0.02em;
+  color: #0d263b;
 }
-
-
-.describtion{
-    font-family: 'Fira Code', monospace;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
+.subTitle {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  /* line-height: 28px; */
+  /* text-align: center; */
+  color: #0d263b;
 }
-
-.center{
-    display: flex;
-    justify-content: center;
+.description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 24px; */
+  color: #696969;
+}
+.center {
+  display: flex;
+  justify-content: center;
 }
 .nocopy {
   -webkit-touch-callout: none;
@@ -56,3 +59,11 @@ body {
   user-select: none;
 }
 
+.alice-carousel__stage {
+  display: flex;
+  gap: 20px;
+}
+.ant-select-single.ant-select-lg:not(.ant-select-customize-input)
+  .ant-select-selector {
+  height: 44px !important;
+}

@@ -1,8 +1,14 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* display: flex; */
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
 `;
 
 const Body = styled.div`
@@ -16,10 +22,4 @@ const Body = styled.div`
   margin: 0 auto;
 `;
 
-const ButtonWrapper = styled.div`
-  margin: 45px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-export { Container, Body, ButtonWrapper };
+export { Container, Wrapper, Body };

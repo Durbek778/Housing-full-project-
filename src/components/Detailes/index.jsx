@@ -1,15 +1,33 @@
 import React from "react";
-import { Navbar } from "../Navbar";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
 import ImgPath from "./ImgPath";
-import { Container } from "./style";
+import { Container, Wrapper } from "./style";
 
-const Detailes = () => {
+export const Detailes = () => {
+  const { REACT_APP_BASE_URL: url } = process.env;
+
+  const { id } = useParams();
+
+  const { data } = useQuery(
+    "gethouse by id",
+    () =>
+      fetch(`${url}/v1/houses/${id?.replace(":", "")}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      }).then((res) => res.json()),
+    {
+      onSuccess: (res) => {},
+    }
+  );
+
   return (
     <Container>
-      <Navbar />
-      <ImgPath />
+      <Wrapper>
+        <ImgPath />
+      </Wrapper>
     </Container>
   );
 };
-
 export default Detailes;
