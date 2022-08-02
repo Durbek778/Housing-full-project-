@@ -14,7 +14,7 @@ import {
 
 export const Card = ({ info, mr, ml, margin, onClick }) => {
   return (
-    <Container mr={mr} ml={ml} margin={margin} onClick={onClick}>
+    <Container mr={mr} ml={ml} margin={margin} onClick={onClick} key={info.id}>
       <Image src={info?.attachments[0]?.imgPath || noimg} alt="house image" />
       <InfoWrapper>
         <User>

@@ -5,10 +5,11 @@ import { Card } from "../../components/Generic/Card";
 import { useState } from "react";
 import { useQuery } from "react-query";
 import Button from "../../components/Generic/Button";
-import { type } from "@testing-library/user-event/dist/type";
+import { useNavigate } from "react-router-dom";
 
 const Properties = () => {
   const [data_Items, setData_items] = useState();
+  const navigate = useNavigate();
 
   useQuery(
     "test",
@@ -19,19 +20,15 @@ const Properties = () => {
     },
     {
       onSuccess: (res) => {
-        const data = res?.data.map((item) => {
-          return <Card info={item} />;
-        });
-
-        setData_items(data);
-        console.log(res);
+        setData_items(res?.data);
+        // console.log(res, "res");
       },
       onError: (err) => {
         // console.log(err);
       },
     }
   );
-
+  console.log(data_Items);
   return (
     <Container>
       <Filter />
@@ -39,7 +36,11 @@ const Properties = () => {
       <p className="describtion">
         Nulla quis curabitur velit volutpat auctor bibendum consectetur sit.
       </p>
-      <Body>{data_Items}</Body>
+      <Body onClick={() => navigate(`/properties${data_Items.id}`)}>
+        {/* {data_Items.map((f) => {
+          return <Card info={f} />;
+        })} */}
+      </Body>
       <ButtonWrapper>
         <Button type={"primary"} width={"250px"}>
           Show more

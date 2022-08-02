@@ -3,21 +3,22 @@ import { Navbar } from "../components/Navbar";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { navbar } from "../utils/navbar";
 import ErorrPage from "../pages/Error";
-import PropertyDetailes from "../components/Detailes/Property Detailes";
 import SignIn from "../components/Signin";
 
 export const Root = () => {
   return (
     <Routes>
+      <Route path="/" element={<SignIn />} />
       <Route element={<Navbar />}>
-        <Route path="/" element={<SignIn />} />
-        {navbar.map((value) => {
-          return (
-            <Route key={value.id} path={value.path} element={value.element} />
-          );
+        {navbar.map((path, Element, id, param) => {
+          return param && <Route key={id} path={path} element={Element} />;
         })}
       </Route>
-      <Route path="/properties:id" element={<PropertyDetailes />} />
+      <Route element={<Navbar />}>
+        {navbar.map((path, Element, id, hidden) => {
+          return !hidden && <Route key={id} path={path} element={Element} />;
+        })}
+      </Route>
       <Route path="*" element={<ErorrPage />} />
     </Routes>
   );
