@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useSearch } from "react";
+import React, { useEffect, useState } from "react";
 import { Body, Container, Wrapper } from "./style";
 import Filter from "../Filter";
 import { useQuery } from "react-query";
@@ -11,15 +11,14 @@ export const Properties = () => {
   const [data, setData] = useState([]);
   const [title, setTitle] = useState("Properties");
   const { search } = useLocation();
-  const query = useSearch();
+  // const query = useSearch();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!query.get("category_id")) {
-      setTitle("Properties");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [query.get("category_id")]);
+  // useEffect(() => {
+  //   if (!query.get("category_id")) {
+  //     setTitle("Properties");
+  //   }
+  // }, [query.get("category_id")]);
 
   useQuery(
     ["getHomeList", search],
@@ -35,25 +34,25 @@ export const Properties = () => {
     }
   );
 
-  const { isLoading, isRefetching } = useQuery(
-    "getHouse",
-    () => {
-      return (
-        query.get("category_id") &&
-        fetch(`${url}/v1/categories/${query.get("category_id")}`, {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }).then((res) => res.json())
-      );
-    },
-    {
-      onSuccess: (res) => {
-        query.get("category_id") && setTitle(res?.data?.name);
-        console.log(res);
-      },
-    }
-  );
+  // const { isLoading, isRefetching } = useQuery(
+  //   "getHouse",
+  //   () => {
+  //     return (
+  //       query.get("category_id") &&
+  //       fetch(`${url}/v1/categories/${query.get("category_id")}`, {
+  //         headers: {
+  //           Authorization: `Bearer ${localStorage.getItem("token")}`,
+  //         },
+  //       }).then((res) => res.json())
+  //     );
+  //   },
+  //   {
+  //     onSuccess: (res) => {
+  //       query.get("category_id") && setTitle(res?.data?.name);
+  //       console.log(res);
+  //     },
+  //   }
+  // );
 
   const onClick = (id) => {
     navigate(`/properties/:${id}`);
@@ -63,9 +62,9 @@ export const Properties = () => {
     <Container>
       <Filter />
       <Wrapper>
-        <div className="title center">
+        {/* <div className="title center">
           {isLoading || isRefetching ? <h1>Loading...</h1> : title}
-        </div>
+        </div> */}
         <div className="description center">
           You have been dreaming of and looking for the cosy and affordable
           homes.

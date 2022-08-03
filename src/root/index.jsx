@@ -14,13 +14,13 @@ export const Root = () => {
       />
 
       <Route element={<Navbar />}>
-        {navbar.map(({ path, Element, id, param }) => {
-          return param && <Route key={id} path={path} element={Element} />;
+        {navbar.map(({ path, element, id, param }) => {
+          return param && <Route key={id} path={path} element={element} />;
         })}
       </Route>
       <Route element={<Navbar />}>
-        {navbar.map(({ path, Element, id, hidden }) => {
-          return !hidden && <Route key={id} path={path} element={Element} />;
+        {navbar.map(({ path, element, id, hidden }) => {
+          return !hidden && <Route key={id} path={path} element={element} />;
         })}
         <Route path="/" element={<Navigate to={"/home"} />} />
       </Route>
