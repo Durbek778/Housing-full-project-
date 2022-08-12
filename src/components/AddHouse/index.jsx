@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./styles";
-import { Button } from "../Generic";
+import { Button } from "../Generic/Button/Button";
 import { useMutation } from "react-query";
 import { useHttp } from "../../hooks/useHttp";
 import { useNavigate } from "react-router-dom";

@@ -1,69 +1,74 @@
-@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
-body {
-  font-family: "Fira Code", monospace;
+body{
+  font-family: 'Fira Code', monospace;
   background: #ffffff;
+
 }
 
-* {
+*,*::after,*::before{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
+:root{
   --primaryColor: #0d263b;
   --secondaryColor: #696969;
   --activeColor: #0061df;
-
-  --width: 1440px;
 }
-
-.title {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 28px;
-  /* line-height: 36px; */
-  /* text-align: center; */
-  letter-spacing: -0.02em;
-  color: #0d263b;
-}
-.subTitle {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  /* line-height: 28px; */
-  /* text-align: center; */
-  color: #0d263b;
-}
-.description {
-  font-family: "Montserrat";
+.description{
+  font-family: 'Montserrat';
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  /* line-height: 24px; */
-  color: #696969;
+  font-size: 14px;
+  line-height: 20px;
+
 }
-.center {
+.center{
   display: flex;
   justify-content: center;
 }
-.nocopy {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.nocopy{
+  -webkit-touch-callout: none; /* IOS Safari */
+  -webkit-user-select:none;/* Safari */
+  -khtml-user-select:none; /* Konqueror HTML */
+  -moz-user-select: none;/* Old versions of FireFox */
+  -ms-user-select: none;/* Internet Explorer/ Edge */
+  user-select: none;/* Non-prefixed version, currently supported by Chrome, Opera */
 }
 
-.alice-carousel__stage {
+/*  Carusel Alice*/
+.alice-carousel__next-btn-wrapper,.alice-carousel__prev-btn-wrapper{
+  position: absolute;
   display: flex;
-  gap: 20px;
+  width: 45px;
+  aspect-ratio: 1;
+  justify-content: center;
+  align-items: center;
+  background: white;
+
+  /* padding: 12px; */
+  opacity: 0.5;
+  border-radius: 50%;
+  z-index: 999;
+  cursor: pointer;
+  box-shadow: 1px 1px 11px 3px rgb(0 0 0 / 60%);
+
 }
-.ant-select-single.ant-select-lg:not(.ant-select-customize-input)
-  .ant-select-selector {
-  height: 44px !important;
+.alice-carousel__next-btn-wrapper{
+  top: 50%;
+  right: -5%;
+  transform: translate(5%, -50%);
+
+}
+.alice-carousel__prev-btn-wrapper{
+  top: 50%;
+  left: -5%;
+  transform: translate(5%, -50%);
+}
+.alice-carousel__next-btn,.alice-carousel__prev-btn {
+  font-size: 20px;
+  font-weight: bold;
+  /* color:#0d263b ; */
 }
